@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Orçamento CGIBS 2026 · Proposta</title>
+<meta name="description" content="Proposta Orçamentária do CGIBS para 2026: R$ 981,5 milhões, em equilíbrio. Receita = Despesa.">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#061226">
+<link rel="icon" type="image/png" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Orçamento CGIBS">
+
+<!-- Open Graph / prévia no WhatsApp — TROQUE a URL base se publicar em outro endereço -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CGIBS">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://giulianosm.github.io/orcamento-cgibs-2026/">
+<meta property="og:title" content="Proposta Orçamentária CGIBS 2026 · R$ 981,5 milhões">
+<meta property="og:description" content="A primeira proposta orçamentária do IBS, em equilíbrio. Receita = Despesa.">
+<meta property="og:image" content="https://giulianosm.github.io/orcamento-cgibs-2026/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proposta Orçamentária CGIBS 2026 · R$ 981,5 milhões">
+<meta name="twitter:description" content="A primeira proposta orçamentária do IBS, em equilíbrio.">
+<meta name="twitter:image" content="https://giulianosm.github.io/orcamento-cgibs-2026/og-image.png">
+<style>
+@font-face{font-family:"Space Grotesk";src:url("fonts/space-grotesk.woff2") format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url("fonts/inter.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+:root{
+  --bg:#061226; --bg2:#081a33; --bg3:#0b2244;
+  --panel:rgba(255,255,255,.045); --panel2:rgba(255,255,255,.07);
+  --br:rgba(143,180,224,.16); --br2:rgba(143,180,224,.28);
+  --ink:#EAF2FF; --txt:#BFD2EC; --muted:#7F95B6; --muted2:#63799b;
+  --gold:#E9B949; --gold-s:#F6DB8E;
+  --blue:#4F9BE0; --blue-d:#2E6FB5; --blue-l:#7FBCF0;
+  --green:#28C68C; --purple:#8A78EC; --navy:#0E2B57;
+  --shadow:0 18px 50px -20px rgba(0,0,0,.7);
+  --glow:0 0 0 1px rgba(143,180,224,.10), 0 24px 60px -30px rgba(8,30,60,.9);
+  --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  --disp:"Space Grotesk",sans-serif; --body:"Inter",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body); background:var(--bg); color:var(--txt);
+  font-feature-settings:"tnum" 1,"cv01" 1; -webkit-font-smoothing:antialiased;
+  line-height:1.5; overflow-x:hidden;
+}
+body::before{ /* ambient aurora */
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(60% 50% at 80% -5%, rgba(46,111,181,.30), transparent 60%),
+    radial-gradient(50% 40% at 8% 8%, rgba(40,198,140,.12), transparent 60%),
+    radial-gradient(70% 60% at 50% 120%, rgba(233,185,73,.10), transparent 55%),
+    linear-gradient(180deg,#061226,#040d1c 60%,#060f20);
+  animation:drift 22s ease-in-out infinite alternate;
+}
+@keyframes drift{ from{transform:translate3d(0,0,0) scale(1)} to{transform:translate3d(-2%,1%,0) scale(1.06)} }
+.wrap{position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:0 22px}
+
+/* ---------- numbers / type ---------- */
+.num{font-family:var(--disp); font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.eyebrow{font-size:11px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--gold-s)}
+h2.sh{font-family:var(--disp); font-weight:700; font-size:clamp(26px,4.5vw,40px); color:var(--ink); letter-spacing:-.02em; line-height:1.05}
+.sub{color:var(--muted); font-size:15px; max-width:60ch; margin-top:10px}
+
+/* ---------- nav ---------- */
+.nav{position:sticky; top:0; z-index:50; backdrop-filter:blur(14px);
+  background:linear-gradient(180deg,rgba(6,18,38,.92),rgba(6,18,38,.62));
+  border-bottom:1px solid var(--br)}
+.nav .bar{height:62px; display:flex; align-items:center; gap:18px}
+.brand{display:flex; align-items:center; gap:11px; font-family:var(--disp); font-weight:700; color:var(--ink); letter-spacing:.04em; font-size:15px}
+.brand .mk{width:34px;height:34px;border-radius:9px;flex-shrink:0;display:grid;place-items:center;
+  background:linear-gradient(140deg,rgba(79,155,224,.3),rgba(79,155,224,.05));border:1px solid rgba(79,155,224,.4)}
+.brand .mk svg{width:21px;height:18px}
+.brand small{display:block;font-family:var(--body);font-weight:500;font-size:8.5px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:2px}
+.nlinks{margin-left:auto; display:flex; gap:3px}
+.nlinks a{font-size:12.5px;font-weight:600;color:var(--muted);text-decoration:none;padding:8px 11px;border-radius:8px;transition:.18s;white-space:nowrap}
+.nlinks a:hover{color:var(--ink);background:var(--panel)}
+.nlinks a.on{color:var(--gold-s)}
+.shbtn{display:inline-flex;align-items:center;gap:7px;margin-left:8px;flex-shrink:0;cursor:pointer;
+  font-family:var(--body);font-size:12.5px;font-weight:600;color:var(--ink);
+  background:var(--panel);border:1px solid var(--br2);border-radius:9px;padding:8px 13px;transition:.18s}
+.shbtn:hover{border-color:var(--blue);background:rgba(79,155,224,.12)}
+.shbtn svg{stroke:var(--blue-l)}
+.shbtn.copied{border-color:var(--green);color:var(--green)} .shbtn.copied svg{stroke:var(--green)}
+
+/* bottom tab bar (mobile) */
+.tabbar{display:none}
+@media(max-width:860px){
+  .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:linear-gradient(180deg,rgba(7,20,42,.86),rgba(5,14,28,.98));backdrop-filter:blur(16px);
+    border-top:1px solid var(--br);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+  .tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;
+    color:var(--muted);font-size:9.5px;font-weight:600;letter-spacing:.02em;padding:6px 2px;border-radius:10px;transition:.18s}
+  .tabbar a svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.8}
+  .tabbar a.on{color:var(--gold-s)}
+  .tabbar a.on svg{stroke:var(--gold-s)}
+  body{padding-bottom:64px}
+}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:linear-gradient(90deg,var(--blue),var(--gold));box-shadow:0 0 12px var(--gold)}
+.menubtn{display:none}
+@media(max-width:860px){
+  .nav .bar{height:auto;flex-wrap:wrap;padding:10px 0 7px;gap:9px}
+  .brand small{display:none}
+  .nlinks{order:3;width:100%;margin-left:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:2px;-webkit-overflow-scrolling:touch}
+  .nlinks::-webkit-scrollbar{display:none}
+  .nlinks a{padding:7px 10px;flex-shrink:0}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative; padding:clamp(54px,11vh,110px) 0 56px}
+.hero .badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--blue-l);background:rgba(79,155,224,.10);border:1px solid rgba(79,155,224,.28);padding:7px 13px;border-radius:999px}
+.hero .badge .pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(40,198,140,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(40,198,140,.5)}70%{box-shadow:0 0 0 9px rgba(40,198,140,0)}100%{box-shadow:0 0 0 0 rgba(40,198,140,0)}}
+.hero h1{font-family:var(--disp);font-weight:600;font-size:clamp(28px,5vw,46px);color:var(--ink);letter-spacing:-.02em;line-height:1.08;margin:22px 0 6px;max-width:18ch}
+.hero h1 b{font-weight:700;background:linear-gradient(120deg,#fff,var(--blue-l));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{color:var(--muted);font-size:16px;max-width:54ch}
+.bignum{margin:34px 0 8px; display:flex; align-items:flex-end; gap:18px; flex-wrap:wrap}
+.bignum .big{font-family:var(--disp);font-weight:700;font-size:clamp(58px,13vw,128px);line-height:.82;letter-spacing:-.04em;
+  background:linear-gradient(160deg,#fff 10%,var(--blue-l) 70%,var(--blue-d));-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 8px 40px rgba(79,155,224,.25))}
+.bignum .unit{font-family:var(--disp);font-weight:600;font-size:clamp(20px,3vw,30px);color:var(--gold-s);padding-bottom:10px}
+.eqline{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+.eqpill{display:inline-flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--br);border-radius:13px;padding:11px 16px}
+.eqpill .lab{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.eqpill .v{font-family:var(--disp);font-weight:700;font-size:18px;color:var(--ink)}
+.eqpill.r .v{color:var(--green)} .eqpill.d .v{color:var(--blue-l)}
+.eqsign{font-family:var(--disp);font-size:26px;color:var(--gold);font-weight:700}
+.scrollcue{margin-top:40px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.scrollcue .ar{width:22px;height:22px;border-radius:50%;border:1px solid var(--br2);display:grid;place-items:center;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(4px)}}
+
+/* ---------- section scaffold ---------- */
+section{padding:64px 0; position:relative; scroll-margin-top:74px}
+.shead{margin-bottom:30px}
+.shead .ix{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.1em;font-weight:700}
+.rule{height:1px;background:linear-gradient(90deg,var(--br2),transparent);margin:14px 0 0}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--br),transparent)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px)}
+.reveal.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.d1.in{transition-delay:.08s}.reveal.d2.in{transition-delay:.16s}.reveal.d3.in{transition-delay:.24s}.reveal.d4.in{transition-delay:.32s}
+
+/* ---------- cards / glass ---------- */
+.card{background:var(--panel);border:1px solid var(--br);border-radius:18px;box-shadow:var(--glow);
+  backdrop-filter:blur(6px);transition:border-color .25s,transform .25s,box-shadow .25s}
+.card:hover{border-color:var(--br2);transform:translateY(-3px)}
+.pad{padding:22px}
+
+/* KPI grid */
+.kgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media(max-width:940px){.kgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.kgrid{grid-template-columns:repeat(2,1fr)}}
+.kpi{padding:20px 18px;position:relative;overflow:hidden}
+.kpi::after{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--accent,var(--blue))}
+.kpi .kk{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.kpi .kv{font-family:var(--disp);font-weight:700;font-size:clamp(26px,4vw,36px);color:var(--ink);letter-spacing:-.03em;line-height:1;margin-top:10px}
+.kpi .kv small{font-size:15px;color:var(--gold-s);font-weight:600}
+.kpi .kd{font-size:11px;color:var(--muted);margin-top:7px}
+
+/* equilíbrio block */
+.eqgrid{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch}
+@media(max-width:760px){.eqgrid{grid-template-columns:1fr;gap:12px}.eqgrid .mid{transform:rotate(90deg)}}
+.eqcol{padding:24px}
+.eqcol .top{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;display:flex;justify-content:space-between}
+.eqcol .tot{font-family:var(--disp);font-weight:700;font-size:clamp(30px,5vw,46px);color:var(--ink);letter-spacing:-.03em;margin:12px 0 18px;line-height:1}
+.eqitem{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-top:1px solid var(--br)}
+.eqitem .n{font-size:13px;color:var(--txt)} .eqitem .n small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.eqitem .vv{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--blue-l);white-space:nowrap}
+.eqcol.rec .vv{color:var(--green)}
+.mid{display:grid;place-items:center}
+.mid .eq{font-family:var(--disp);font-size:44px;font-weight:700;color:var(--gold);text-shadow:0 0 30px rgba(233,185,73,.4)}
+
+/* donut + legend */
+.dwrap{display:grid;grid-template-columns:280px 1fr;gap:30px;align-items:center}
+@media(max-width:680px){.dwrap{grid-template-columns:1fr;justify-items:center;gap:22px}}
+.donut{position:relative;width:240px;height:240px}
+.donut svg{width:100%;height:100%;transform:rotate(0)}
+.donut .seg{stroke-dashoffset:var(--len);transition:stroke-dashoffset 1.1s cubic-bezier(.2,.7,.2,1)}
+.in .donut .seg{stroke-dashoffset:0}
+.donut .ctr{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.donut .ctr .p{font-family:var(--disp);font-weight:700;font-size:34px;color:var(--ink);letter-spacing:-.03em;line-height:1}
+.donut .ctr .l{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:4px}
+.legend{display:flex;flex-direction:column;gap:4px;width:100%}
+.leg{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 4px;border-bottom:1px solid var(--br)}
+.leg:last-child{border-bottom:none}
+.leg .dot{width:13px;height:13px;border-radius:4px;flex-shrink:0}
+.leg .nm{font-size:13.5px;color:var(--txt);font-weight:500} .leg .nm small{display:block;color:var(--muted);font-size:11px}
+.leg .vl{text-align:right;white-space:nowrap}
+.leg .vl b{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--ink)}
+.leg .vl span{display:block;font-size:11px;color:var(--gold-s);font-weight:600}
+
+/* bars */
+.bars{display:flex;flex-direction:column;gap:18px}
+.bar .bt{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:8px}
+.bar .bn{font-size:13.5px;color:var(--txt)} .bar .bn small{color:var(--muted);font-family:var(--mono);font-size:11px;margin-left:6px}
+.bar .bv{font-family:var(--disp);font-weight:700;font-size:16px;color:var(--ink);white-space:nowrap}
+.bar .trk{height:10px;border-radius:6px;background:rgba(255,255,255,.06);overflow:hidden}
+.bar .fil{height:100%;width:0;border-radius:6px;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.in .bar .fil{width:var(--w)}
+
+/* split bar */
+.split{display:flex;height:64px;border-radius:14px;overflow:hidden;border:1px solid var(--br)}
+.split .sg{display:grid;place-content:center;text-align:center;color:#fff;width:0;transition:width 1.2s cubic-bezier(.2,.7,.2,1);min-width:0;overflow:hidden}
+.in .split .sg{width:var(--w)}
+.split .sg b{font-family:var(--disp);font-weight:700;font-size:20px;display:block;letter-spacing:-.02em}
+.split .sg span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.92}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:600px){.twocol{grid-template-columns:1fr}}
+.statcard{padding:20px}
+.statcard .sk{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.statcard .sv{font-family:var(--disp);font-weight:700;font-size:clamp(26px,4vw,34px);color:var(--ink);letter-spacing:-.03em;margin-top:8px;line-height:1}
+.statcard .sd{font-size:12px;color:var(--muted);margin-top:8px}
+
+/* big stat (folha / pca) */
+.hero-stat{padding:30px}
+.hero-stat .hk{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-s);font-weight:700}
+.hero-stat .hv{font-family:var(--disp);font-weight:700;font-size:clamp(40px,8vw,72px);color:var(--ink);letter-spacing:-.04em;line-height:.95;margin:10px 0 4px}
+.hero-stat .hv small{font-size:.42em;color:var(--blue-l);font-weight:600;letter-spacing:0}
+.hero-stat .hd{font-size:13px;color:var(--muted)}
+.fbreak{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;padding-top:22px;border-top:1px solid var(--br)}
+@media(max-width:520px){.fbreak{grid-template-columns:1fr}}
+.fb .fk{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.fb .fv{font-family:var(--disp);font-weight:700;font-size:24px;color:var(--ink);margin-top:5px;letter-spacing:-.02em}
+
+/* table */
+.tbl{width:100%;border-collapse:collapse;margin-top:6px}
+.tbl th{text-align:left;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:0 0 12px;border-bottom:1px solid var(--br)}
+.tbl th.r,.tbl td.r{text-align:right}
+.tbl td{padding:13px 0;border-bottom:1px solid var(--br);font-size:14px;color:var(--txt)}
+.tbl td.val{font-family:var(--disp);font-weight:700;color:var(--ink)}
+.tbl tr.tot td{border-bottom:none;border-top:2px solid var(--br2);font-weight:800;color:var(--ink);padding-top:14px}
+.tbl tr.tot td.val{color:var(--gold-s)}
+
+/* timeline */
+.tl{position:relative;padding-left:8px}
+.tlitem{position:relative;padding:0 0 30px 42px}
+.tlitem:last-child{padding-bottom:0}
+.tlitem::before{content:"";position:absolute;left:13px;top:26px;bottom:-4px;width:2px;background:var(--br)}
+.tlitem:last-child::before{display:none}
+.tldot{position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  background:var(--bg2);border:2px solid var(--blue-d);color:var(--blue-l);font-family:var(--disp);font-weight:700;font-size:12px}
+.tlitem.done .tldot{background:var(--green);border-color:var(--green);color:#04261a}
+.tlitem.crit .tldot{background:var(--gold);border-color:var(--gold);color:#3a2a05;box-shadow:0 0 22px rgba(233,185,73,.5)}
+.tldate{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.tltitle{font-family:var(--disp);font-weight:600;font-size:16px;color:var(--ink);margin:3px 0 4px}
+.tlitem.crit .tltitle{color:var(--gold-s)}
+.tldesc{font-size:13px;color:var(--muted);max-width:52ch}
+.tlitem .mono{font-family:var(--mono);font-size:12px;color:var(--blue-l)}
+
+/* deadline ribbon */
+.dlrib{display:flex;align-items:center;gap:18px;padding:20px 24px;border-radius:16px;margin-bottom:26px;
+  background:linear-gradient(120deg,rgba(233,185,73,.14),rgba(233,185,73,.04));border:1px solid rgba(233,185,73,.34)}
+.dlrib .dd{font-family:var(--disp);font-weight:700;font-size:clamp(30px,6vw,46px);color:var(--gold-s);letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.dlrib .dl{font-size:13px;color:var(--txt)} .dlrib .dl b{color:var(--gold-s)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-size:12.5px;font-weight:600;color:var(--txt);background:var(--panel);border:1px solid var(--br);border-radius:10px;padding:9px 14px}
+.chip .mono{font-family:var(--mono);color:var(--blue-l);font-size:11.5px}
+
+/* sigef */
+.sigef{display:grid;grid-template-columns:1fr;gap:14px}
+.prio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:600px){.prio{grid-template-columns:1fr}}
+.pcard{padding:16px 18px;display:flex;align-items:center;gap:13px}
+.pcard .pn{width:34px;height:34px;border-radius:9px;flex-shrink:0;display:grid;place-items:center;font-family:var(--disp);font-weight:700;color:#fff;
+  background:linear-gradient(140deg,var(--navy),var(--blue-d))}
+.pcard .pt{font-size:13px;font-weight:600;color:var(--txt)}
+
+/* footer */
+.foot{padding:54px 0 70px;text-align:center;border-top:1px solid var(--br);margin-top:30px}
+.foot .fm{width:40px;height:34px;margin:0 auto 16px;opacity:.7}
+.foot .ft{font-family:var(--disp);font-weight:600;color:var(--ink);font-size:15px}
+.foot .fs{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.8}
+
+a:focus-visible,.nlinks a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .donut .seg{stroke-dashoffset:0} .bar .fil{width:var(--w)} .split .sg{width:var(--w)}
+  body::before{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap bar">
+    <div class="brand">
+      <span class="mk"><svg viewBox="0 0 40 34" fill="none"><rect x="18" y="3" width="14" height="3.4" rx="1.7" fill="#7FBCF0"/><rect x="10" y="9.5" width="22" height="3.4" rx="1.7" fill="#7FBCF0"/><rect x="4" y="16" width="28" height="3.4" rx="1.7" fill="#4F9BE0"/><rect x="10" y="22.5" width="22" height="3.4" rx="1.7" fill="#E9B949"/><rect x="18" y="29" width="14" height="3.4" rx="1.7" fill="#E9B949"/></svg></span>
+      <span>CGIBS<small>Orçamento 2026</small></span>
+    </div>
+    <nav class="nlinks" aria-label="Seções">
+      <a href="#panorama">Panorama</a>
+      <a href="#equilibrio">Equilíbrio</a>
+      <a href="#despesa">Despesa</a>
+      <a href="#folha">Folha</a>
+      <a href="#custeio">Custeio</a>
+      <a href="#pca">PCA</a>
+      <a href="#investimentos">Investimentos</a>
+      <a href="#rito">Rito</a>
+    </nav>
+    <button class="shbtn" id="share" aria-label="Compartilhar painel">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      <span>Compartilhar</span>
+    </button>
+    <div class="progress" id="prog"></div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="topo" style="padding-top:clamp(40px,7vh,72px)">
+  <div class="wrap">
+    <span class="badge"><span class="pulse"></span>Comitê Gestor do IBS · Proposta · Exercício 2026</span>
+    <h1>A <b>primeira</b> proposta orçamentária do IBS, em equilíbrio.</h1>
+    <div class="bignum">
+      <span class="big num" data-to="981.5" data-dec="1">0,0</span>
+      <span class="unit">milhões em R$</span>
+    </div>
+    <p class="lead">Orçamento integralmente equilibrado: a receita prevista cobre, ao centavo, a despesa fixada.</p>
+    <div class="eqline">
+      <span class="eqpill r"><span class="lab">Receita</span><span class="v num" data-to="981.5" data-dec="1" data-prefix="R$ ">R$ 0,0</span></span>
+      <span class="eqsign">=</span>
+      <span class="eqpill d"><span class="lab">Despesa</span><span class="v num" data-to="981.5" data-dec="1" data-prefix="R$ ">R$ 0,0</span></span>
+    </div>
+    <a href="#panorama" class="scrollcue" style="text-decoration:none">
+      <span class="ar"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M2 7l4 4 4-4" stroke="#7F95B6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      Explorar os números
+    </a>
+  </div>
+</section>
+
+<!-- ============ PANORAMA ============ -->
+<section id="panorama">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">01 · Panorama</span>
+      <h2 class="sh" style="margin-top:8px">Proposta em grandes números</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="kgrid">
+      <div class="card kpi reveal d1" style="--accent:var(--blue)">
+        <div class="kk">Orçamento total</div>
+        <div class="kv num" data-to="981.5" data-dec="1" data-prefix="R$ ">R$ 0,0</div>
+        <div class="kd">milhões · receita = despesa</div>
+      </div>
+      <div class="card kpi reveal d2" style="--accent:var(--gold)">
+        <div class="kk">Reserva de contingência</div>
+        <div class="kv num" data-to="42.20" data-dec="2" data-suffix="%">0%</div>
+        <div class="kd">R$ 414,18 mi · GND 9.9</div>
+      </div>
+      <div class="card kpi reveal d3" style="--accent:var(--green)">
+        <div class="kk">Investimentos</div>
+        <div class="kv num" data-to="14.59" data-dec="2" data-suffix="%">0%</div>
+        <div class="kd">R$ 143,15 mi</div>
+      </div>
+      <div class="card kpi reveal d4" style="--accent:var(--gold)">
+        <div class="kk">Prazo no DOU</div>
+        <div class="kv">08/07</div>
+        <div class="kd">2026 · publicação</div>
+      </div>
+      <div class="card kpi reveal d4" style="--accent:var(--purple)">
+        <div class="kk">Deliberação</div>
+        <div class="kv num" data-to="54" data-dec="0">0</div>
+        <div class="kd">Poderes Legislativos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EQUILÍBRIO ============ -->
+<section id="equilibrio">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">02 · Equilíbrio</span>
+      <h2 class="sh" style="margin-top:8px">Receita = Despesa</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="eqgrid">
+      <div class="card eqcol rec reveal">
+        <div class="top"><span>Receita prevista</span><span style="color:var(--green)">100%</span></div>
+        <div class="tot"><span class="num" data-to="981.5" data-dec="1" data-prefix="R$ ">R$ 0,0</span><span style="font-size:.4em;color:var(--muted)"> mi</span></div>
+        <div class="eqitem"><div class="n">Operação de Crédito da União<small>art. 484 da LC 214/2025</small></div><div class="vv">R$ 950,0 mi · 96,8%</div></div>
+        <div class="eqitem"><div class="n">Receita Patrimonial<small>rendimentos de aplicações</small></div><div class="vv">R$ 31,5 mi · 3,2%</div></div>
+      </div>
+      <div class="mid"><span class="eq">=</span></div>
+      <div class="card eqcol reveal d2">
+        <div class="top"><span>Despesa fixada</span><span style="color:var(--blue-l)">100%</span></div>
+        <div class="tot"><span class="num" data-to="981.5" data-dec="1" data-prefix="R$ ">R$ 0,0</span><span style="font-size:.4em;color:var(--muted)"> mi</span></div>
+        <div class="eqitem"><div class="n">Despesas programadas<small>2º semestre de 2026</small></div><div class="vv">R$ 567,3 mi · 57,8%</div></div>
+        <div class="eqitem"><div class="n">Reserva de contingência<small>estratégica</small></div><div class="vv">R$ 414,2 mi · 42,2%</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESPESA POR GND ============ -->
+<section id="despesa">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">03 · Despesa fixada</span>
+      <h2 class="sh" style="margin-top:8px">Distribuição por grupo de natureza</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="card pad reveal">
+      <div class="dwrap">
+        <div class="donut" data-donut>
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <!-- r=80 C=502.65 ; ordem: Pessoal, Outras, Investimentos, Reserva -->
+            <circle class="seg" cx="100" cy="100" r="80" fill="none" stroke="#4F9BE0" stroke-width="26" stroke-dasharray="144.91 502.65" style="--len:144.91" transform="rotate(-90 100 100)"/>
+            <circle class="seg" cx="100" cy="100" r="80" fill="none" stroke="#8A78EC" stroke-width="26" stroke-dasharray="72.28 502.65" style="--len:72.28;transition-delay:.12s" transform="rotate(13.79 100 100)"/>
+            <circle class="seg" cx="100" cy="100" r="80" fill="none" stroke="#28C68C" stroke-width="26" stroke-dasharray="73.34 502.65" style="--len:73.34;transition-delay:.24s" transform="rotate(65.56 100 100)"/>
+            <circle class="seg" cx="100" cy="100" r="80" fill="none" stroke="#E9B949" stroke-width="26" stroke-dasharray="212.12 502.65" style="--len:212.12;transition-delay:.36s" transform="rotate(118.08 100 100)"/>
+          </svg>
+          <div class="ctr"><span class="p num" data-to="981.5" data-dec="1">0,0</span><span class="l">R$ milhões</span></div>
+        </div>
+        <div class="legend">
+          <div class="leg"><span class="dot" style="background:#4F9BE0"></span><span class="nm">Pessoal e Encargos Sociais</span><span class="vl"><b>R$ 282,98</b><span>28,83%</span></span></div>
+          <div class="leg"><span class="dot" style="background:#8A78EC"></span><span class="nm">Outras Despesas Correntes</span><span class="vl"><b>R$ 141,17</b><span>14,38%</span></span></div>
+          <div class="leg"><span class="dot" style="background:#28C68C"></span><span class="nm">Investimentos</span><span class="vl"><b>R$ 143,15</b><span>14,59%</span></span></div>
+          <div class="leg"><span class="dot" style="background:#E9B949"></span><span class="nm">Reserva de Contingência</span><span class="vl"><b>R$ 414,18</b><span>42,20%</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider" style="margin:34px 0"></div>
+
+    <div class="reveal">
+      <div class="split" data-split>
+        <div class="sg" style="--w:57.8%;background:linear-gradient(135deg,#2E6FB5,#4F9BE0)"><b>57,8%</b><span>Despesas Programadas</span></div>
+        <div class="sg" style="--w:42.2%;background:linear-gradient(135deg,#C9962E,#E9B949)"><b>42,2%</b><span>Reserva</span></div>
+      </div>
+      <div class="twocol">
+        <div class="card statcard"><div class="sk">Despesas Programadas · 57,8%</div><div class="sv">R$ 567,32 mi</div><div class="sd">Pessoal, custeio e investimentos no 2º semestre de 2026.</div></div>
+        <div class="card statcard"><div class="sk">Reserva de Contingência · 42,2%</div><div class="sv">R$ 414,18 mi</div><div class="sd">42,20% da despesa total fixada.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOLHA ============ -->
+<section id="folha">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">04 · Planejamento financeiro da folha de pagamento</span>
+      <h2 class="sh" style="margin-top:8px">Folha 2026 · 2º semestre</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="card hero-stat reveal">
+      <div class="hk">Folha de pagamento 2026 · 2º sem.</div>
+      <div class="hv"><span class="num" data-to="343.6" data-dec="1" data-prefix="R$ ">R$ 0,0</span><small> milhões</small></div>
+      <div class="hd">Programação financeira da folha.</div>
+      <div class="fbreak">
+        <div class="fb"><div class="fk">Despesa com Pessoal</div><div class="fv">R$ 282,98 mi</div></div>
+        <div class="fb"><div class="fk">Custeio</div><div class="fv">R$ 60,62 mi</div></div>
+      </div>
+    </div>
+    <div class="card pad reveal d2" style="margin-top:14px">
+      <div style="font-family:var(--disp);font-weight:600;color:var(--ink);font-size:15px;margin-bottom:20px">Despesa com Pessoal · R$ 282,98 mi</div>
+      <div class="bars" data-bars>
+        <div class="bar"><div class="bt"><span class="bn">Ressarc. pessoal requisitado<small>3.1.90.96</small></span><span class="bv">R$ 142,93 mi</span></div><div class="trk"><div class="fil" style="--w:100%;background:linear-gradient(90deg,#2E6FB5,#7FBCF0)"></div></div></div>
+        <div class="bar"><div class="bt"><span class="bn">Vencimentos e vant. fixas<small>3.1.90.11</small></span><span class="bv">R$ 116,93 mi</span></div><div class="trk"><div class="fil" style="--w:82%;background:linear-gradient(90deg,#2E6FB5,#7FBCF0)"></div></div></div>
+        <div class="bar"><div class="bt"><span class="bn">Outras Despesas Variáveis<small>3.1.90.16</small></span><span class="bv">R$ 22,36 mi</span></div><div class="trk"><div class="fil" style="--w:16%;background:linear-gradient(90deg,#2E6FB5,#7FBCF0)"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUSTEIO ============ -->
+<section id="custeio">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">05 · Custeio</span>
+      <h2 class="sh" style="margin-top:8px">Outras despesas correntes</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="card hero-stat reveal" style="padding-bottom:8px">
+      <div class="hk">Custeio · GND 3</div>
+      <div class="hv"><span class="num" data-to="141.17" data-dec="2" data-prefix="R$ ">R$ 0,0</span><small> milhões</small></div>
+    </div>
+    <div class="card pad reveal d2" style="margin-top:14px">
+      <div class="bars" data-bars>
+        <div class="bar"><div class="bt"><span class="bn">Serviços de TIC · PJ<small>3.3.90.40</small></span><span class="bv">R$ 49,7 mi</span></div><div class="trk"><div class="fil" style="--w:100%;background:linear-gradient(90deg,#6F5BD6,#A593F2)"></div></div></div>
+        <div class="bar"><div class="bt"><span class="bn">Outros Serviços de Terceiros · PF<small>3.3.90.36</small></span><span class="bv">R$ 36,4 mi</span></div><div class="trk"><div class="fil" style="--w:73%;background:linear-gradient(90deg,#6F5BD6,#A593F2)"></div></div></div>
+        <div class="bar"><div class="bt"><span class="bn">Outros Serviços de Terceiros · PJ<small>3.3.90.39</small></span><span class="bv">R$ 21,2 mi</span></div><div class="trk"><div class="fil" style="--w:43%;background:linear-gradient(90deg,#6F5BD6,#A593F2)"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PCA ============ -->
+<section id="pca">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">06 · PCA 2026</span>
+      <h2 class="sh" style="margin-top:8px">Plano de Contratações Anual</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="card hero-stat reveal">
+      <div class="hk">PCA 2026 · consolidado</div>
+      <div class="hv"><span class="num" data-to="125.5" data-dec="1" data-prefix="R$ ">R$ 0,0</span><small> milhões</small></div>
+      <div class="hd">Plano de Contratações Anual do CGIBS para o exercício de 2026.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INVESTIMENTOS ============ -->
+<section id="investimentos">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">07 · Investimentos</span>
+      <h2 class="sh" style="margin-top:8px">Investimentos · R$ 143,15 milhões</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="card pad reveal">
+      <div class="dwrap">
+        <div class="donut" data-donut>
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <circle class="seg" cx="100" cy="100" r="80" fill="none" stroke="#4F9BE0" stroke-width="26" stroke-dasharray="343.31 502.65" style="--len:343.31" transform="rotate(-90 100 100)"/>
+            <circle class="seg" cx="100" cy="100" r="80" fill="none" stroke="#28C68C" stroke-width="26" stroke-dasharray="120.64 502.65" style="--len:120.64;transition-delay:.12s" transform="rotate(155.88 100 100)"/>
+            <circle class="seg" cx="100" cy="100" r="80" fill="none" stroke="#8A78EC" stroke-width="26" stroke-dasharray="38.70 502.65" style="--len:38.70;transition-delay:.24s" transform="rotate(242.28 100 100)"/>
+          </svg>
+          <div class="ctr"><span class="p num" data-to="143.1" data-dec="1">0,0</span><span class="l">R$ milhões</span></div>
+        </div>
+        <div class="legend">
+          <div class="leg"><span class="dot" style="background:#4F9BE0"></span><span class="nm">Indenizações e Restituições<small>4.4.90.93</small></span><span class="vl"><b>R$ 97,8</b><span>68,3%</span></span></div>
+          <div class="leg"><span class="dot" style="background:#28C68C"></span><span class="nm">Equipamentos e Material Permanente<small>4.4.90.52</small></span><span class="vl"><b>R$ 34,3</b><span>24,0%</span></span></div>
+          <div class="leg"><span class="dot" style="background:#8A78EC"></span><span class="nm">Serviços de TIC · PJ<small>4.4.90.40</small></span><span class="vl"><b>R$ 11,0</b><span>7,7%</span></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card pad reveal d2" style="margin-top:14px">
+      <div style="font-family:var(--disp);font-weight:600;color:var(--ink);font-size:15px;margin-bottom:6px">Ressarcimentos a entes federativos · R$ 97,8 mi</div>
+      <table class="tbl">
+        <thead><tr><th>Ente</th><th class="r">R$ mi</th></tr></thead>
+        <tbody>
+          <tr><td>SEFAZ / RS</td><td class="r val">88,2</td></tr>
+          <tr><td>SEFAZ / MG</td><td class="r val">7,5</td></tr>
+          <tr><td>SEFAZ / SP</td><td class="r val">2,1</td></tr>
+          <tr class="tot"><td>Total</td><td class="r val">97,8</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RITO ============ -->
+<section id="rito">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="eyebrow">08 · Rito, prazo e sistema</span>
+      <h2 class="sh" style="margin-top:8px">Tramitação e deliberação</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="dlrib reveal">
+      <div class="dd">08/07/2026</div>
+      <div class="dl"><b>Prazo de publicação no DOU.</b> Abre a janela de 30 dias para manifestação dos 54 Poderes Legislativos.</div>
+    </div>
+
+    <div class="card pad reveal d2">
+      <div class="tl">
+        <div class="tlitem done"><div class="tldot">✓</div><div class="tldate">Concluído</div><div class="tltitle">Formulação e aprovação preliminar</div><div class="tldesc">Proposta consolidada e aprovada na CT-TES (Resolução 07/2026).</div></div>
+        <div class="tlitem"><div class="tldot">2</div><div class="tldate">Em curso</div><div class="tltitle">Tramitação no SEI</div><div class="tldesc"><span class="mono">Processo nº 999110000027.000001/2026-42</span></div></div>
+        <div class="tlitem"><div class="tldot">3</div><div class="tldate">Ação requerida</div><div class="tltitle">Deliberação do Conselho Superior</div><div class="tldesc">Aprovação para proposição aos Poderes Legislativos.</div></div>
+        <div class="tlitem crit"><div class="tldot">4</div><div class="tldate">Até 08/07/2026</div><div class="tltitle">Publicação no DOU</div></div>
+        <div class="tlitem"><div class="tldot">5</div><div class="tldate">30 dias após o DOU</div><div class="tltitle">Aprovação pelos 54 Poderes Legislativos</div><div class="tldesc">Manifestação pela aprovação, pela rejeição ou aprovação tácita.</div></div>
+        <div class="tlitem"><div class="tldot">6</div><div class="tldate">Sequência</div><div class="tltitle">Carga no SIGEF e execução</div></div>
+      </div>
+    </div>
+
+    <div class="card pad reveal d3 sigef" style="margin-top:14px">
+      <div style="font-size:13px;color:var(--txt);line-height:1.6">Elaboração em <b style="color:var(--ink)">ambiente externo ao SIGEF</b>; módulos em desenvolvimento via convênio <b style="color:var(--ink)">SEFAZ/SP (Indra — 001)</b>.</div>
+      <div class="prio">
+        <div class="card pcard" style="box-shadow:none"><span class="pn">01</span><span class="pt">Execução Orçamentária</span></div>
+        <div class="card pcard" style="box-shadow:none"><span class="pn">02</span><span class="pt">Execução Financeira</span></div>
+        <div class="card pcard" style="box-shadow:none"><span class="pn">03</span><span class="pt">Execução Contábil e Patrimonial</span></div>
+      </div>
+    </div>
+
+    <div class="reveal d4" style="margin-top:22px">
+      <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:12px">Atos do CGIBS e desta proposta</div>
+      <div class="chips">
+        <span class="chip">Resolução CGIBS nº 07/2026</span>
+        <span class="chip">NT CT-TES nº 05/2026</span>
+        <span class="chip"><span class="mono">Processo SEI nº 999110000027.000001/2026-42</span></span>
+        <span class="chip">Art. 4º da Resolução CGIBS nº 07/2026</span>
+        <span class="chip">LC nº 227/2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOT ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <svg class="fm" viewBox="0 0 40 34" fill="none"><rect x="18" y="3" width="14" height="3.4" rx="1.7" fill="#7FBCF0"/><rect x="10" y="9.5" width="22" height="3.4" rx="1.7" fill="#7FBCF0"/><rect x="4" y="16" width="28" height="3.4" rx="1.7" fill="#4F9BE0"/><rect x="10" y="22.5" width="22" height="3.4" rx="1.7" fill="#E9B949"/><rect x="18" y="29" width="14" height="3.4" rx="1.7" fill="#E9B949"/></svg>
+    <div class="ft">Proposta Orçamentária CGIBS 2026</div>
+    <div class="fs">
+      Nota Técnica CT-TES nº 05/2026 · Equipe de Elaboração do Orçamento / CT-TES · 19 de junho de 2026<br>
+      Art. 4º da Resolução CGIBS nº 07/2026 · LC nº 227/2026
+    </div>
+  </div>
+</footer>
+
+<!-- ============ BOTTOM TAB BAR (mobile) ============ -->
+<nav class="tabbar" aria-label="Navegação rápida">
+  <a href="#topo" data-sec="panorama"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Panorama</a>
+  <a href="#despesa" data-sec="despesa"><svg viewBox="0 0 24 24"><path d="M21 15.5A9 9 0 1 1 8.5 3"/><path d="M21.5 11.5A9.5 9.5 0 0 0 12 2.5V12z"/></svg>Despesa</a>
+  <a href="#folha" data-sec="folha"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 7.5a3 3 0 0 1 0 5"/><path d="M18 20a6 6 0 0 0-3-5"/></svg>Folha</a>
+  <a href="#investimentos" data-sec="investimentos"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>Invest.</a>
+  <a href="#rito" data-sec="rito"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>Rito</a>
+</nav>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function fmt(n,dec){ return n.toLocaleString('pt-BR',{minimumFractionDigits:dec,maximumFractionDigits:dec}); }
+  function countUp(el){
+    if(el.dataset.done) return; el.dataset.done="1";
+    var to=parseFloat(el.dataset.to), dec=parseInt(el.dataset.dec||"0"),
+        pre=el.dataset.prefix||"", suf=el.dataset.suffix||"", dur=1300;
+    if(reduce){ el.textContent=pre+fmt(to,dec)+suf; return; }
+    var t0=null;
+    function step(t){ if(!t0)t0=t; var p=Math.min((t-t0)/dur,1), e=1-Math.pow(1-p,3);
+      el.textContent=pre+fmt(to*e,dec)+suf; if(p<1)requestAnimationFrame(step); else el.textContent=pre+fmt(to,dec)+suf; }
+    requestAnimationFrame(step);
+  }
+
+  // hero counts immediately
+  document.querySelectorAll('.hero .num').forEach(countUp);
+
+  // reveal + trigger nested counts/charts
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        en.target.querySelectorAll('.num').forEach(countUp);
+        io.unobserve(en.target);
+      }
+    });
+  },{threshold:.18, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // nav active + progress + bottom tabs
+  var prog=document.getElementById('prog');
+  var links=[].slice.call(document.querySelectorAll('.nlinks a'));
+  var secs=links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var tabs=[].slice.call(document.querySelectorAll('.tabbar a'));
+  var tabSecs=tabs.map(function(a){ return document.getElementById(a.dataset.sec); });
+  function activeIdx(list){ var idx=0; for(var i=0;i<list.length;i++){ if(list[i] && list[i].getBoundingClientRect().top<=130) idx=i; } return idx; }
+  function onScroll(){
+    var h=document.documentElement, sc=h.scrollTop, max=h.scrollHeight-h.clientHeight;
+    prog.style.width=(max>0?(sc/max*100):0)+'%';
+    var ni=activeIdx(secs); links.forEach(function(a,i){ a.classList.toggle('on', i===ni); });
+    var ti=activeIdx(tabSecs); tabs.forEach(function(a,i){ a.classList.toggle('on', i===ti); });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // native share (Web Share API) with clipboard fallback
+  var sh=document.getElementById('share');
+  if(sh){
+    sh.addEventListener('click', function(){
+      var data={title:'Proposta Orçamentária CGIBS 2026', text:'Proposta Orçamentária do CGIBS para 2026 — R$ 981,5 milhões, em equilíbrio.', url:location.href};
+      if(navigator.share){ navigator.share(data).catch(function(){}); return; }
+      var done=function(){ sh.classList.add('copied'); var t=sh.querySelector('span'); var old=t?t.textContent:''; if(t)t.textContent='Link copiado'; setTimeout(function(){ sh.classList.remove('copied'); if(t)t.textContent=old; },2000); };
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(location.href).then(done).catch(function(){ prompt('Copie o link:',location.href); }); }
+      else { prompt('Copie o link:',location.href); }
+    });
+  }
+
+  // service worker (offline + carregamento instantâneo)
+  if('serviceWorker' in navigator){ window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); }); }
+})();
+</script>
+</body>
+</html>
