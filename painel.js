@@ -63,4 +63,16 @@
 
   // service worker (offline + carregamento instantâneo)
   if('serviceWorker' in navigator){ window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); }); }
+
+  // sobreposições (modais): Equipe e Conselheiros
+  function openModal(m){ if(!m) return; m.classList.add('open'); document.body.style.overflow='hidden'; var c=m.querySelector('[data-close]'); if(c) c.focus(); }
+  function closeModal(m){ m.classList.remove('open'); document.body.style.overflow=''; }
+  [].slice.call(document.querySelectorAll('[data-modal]')).forEach(function(btn){
+    btn.addEventListener('click', function(){ openModal(document.getElementById(btn.getAttribute('data-modal'))); });
+  });
+  [].slice.call(document.querySelectorAll('.modal-backdrop')).forEach(function(bd){
+    bd.addEventListener('click', function(e){ if(e.target===bd || (e.target.closest && e.target.closest('[data-close]'))) closeModal(bd); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ [].slice.call(document.querySelectorAll('.modal-backdrop.open')).forEach(closeModal); } });
+
 })();
